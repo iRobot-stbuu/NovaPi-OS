@@ -15,7 +15,7 @@ A custom NovaPi shell where you can customize your ideal MakeX Challenge robot!
 * Python 3 installed on your computer
 * PuTTY installed on your computer
 ## A nice to haves
-* Raspberry pi ( For headless control )
+* Raspberry pi (Running **Linux** or **Windows on ARM**) As its currently allowed on MakeX Challenge competition
 * [mblock programming software](https://www.mblock.cc/en/)
 ## Steps
 * Plug your NovaPi into your computer
