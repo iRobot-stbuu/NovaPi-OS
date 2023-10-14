@@ -23,6 +23,8 @@ A custom NovaPi shell where you can customize your ideal MakeX Challenge robot!
 	*  On Windows, it should identify itself as **COM** port
 	* On MacOS, it should identify itself with **/dev/ttyUSB**
 	* Sadly we are having a hard time to get everything working on Linux
+* Upload a python file to the NovaPi
+	* It's equivalent as uploading a python file with the **mblock programming software!**
 * Launch PuTTY
 	* Change **Connection type** to **Serial**
 	* Put **Serial line** to your identified device ( From step 2! )
