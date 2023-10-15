@@ -1,3 +1,5 @@
+
+
 class system:
     def loadlogo():
         print("""
@@ -47,6 +49,7 @@ class system:
             cmd = arg[0]
 
             if(cmd == "help"):
+                # Change this to ui_help.txt then upload!
                 print(" Available commands")
                 print(" Parameters: [] required, <> optional")
                 print("----------------------------------------------")
@@ -74,7 +77,7 @@ class system:
                 print("[i] Running MakeX Challenge program!")
                 print("----------------")
                 try:
-                    challenge_default.challenge_runtime()
+                    exec(open(CHALLENGE_DEFAULT_RUNTIME_FILE).read()) # Run a separate file
                 except:
                     print("[W] Something went wrong running challenge_default!")
 
@@ -98,14 +101,15 @@ class system:
 
                 if (mbuild_ports_4 == "ranging_sensor"):
                     print(" ACQ (Aquisition mode)")
+                    # Change all these .format() with actual values
                     print("----------------------------")
                     print("| settings           | value")
-                    print("| mbuld port         | 4")
-                    print("| scan attribute     | rect")
-                    print("| scan azimuth       | -5 5")
-                    print("| scan altitute      | 5  5")
-                    print("| scan interval      | alot")
-                    print("| scan range         | 100")
+                    print("| mbuld port         | {}".format("4"))
+                    print("| scan attribute     | {}".format("rect"))
+                    print("| scan azimuth       | {}, {}".format(-5, 5))
+                    print("| scan altitute      | {}, {}".format(5, 5))
+                    print("| scan interval      | {}".format("100"))
+                    print("| scan range         | {}".format("100"))
                     print("----------------------------")
                     continue
                 else:
@@ -113,6 +117,7 @@ class system:
 
             elif(cmd == "mbuild"):
                 if len(arg) == 1:
+                    # Actual mbuild configurator API soon!
                     print(" mbuild configurator")
                     print(" To view or setup mbuild ports. Run: mbuild [set|read] [port] [kind]")
                     print(" mbuild config path: ./flash/hawkeye_sensors.json")
@@ -160,6 +165,9 @@ import _thread
 #import machine
 import time
 import os
+
+# Init variables
+CHALLENGE_DEFAULT_RUNTIME_FILE = './challenge_default.py'
 
 system.loadme()
 system.loadlogo()
