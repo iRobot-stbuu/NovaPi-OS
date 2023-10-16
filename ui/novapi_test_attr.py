@@ -1,5 +1,3 @@
-import novapi
-import machine
 import _thread
 import time
 
@@ -14,7 +12,14 @@ print("""
                                  /_/              
                                                   """)
 print("--- NETto!_NS Runtime ---\n[i] This runtime is compiled for NovaPi V1_3\n[W] For testing purposes!\n---------")
-print("machine:\n{}".format(dir(machine.UART)))
 
 
-uart = machine.UART.init(115200, 1)
+sample_data = {
+    "name": "mbuild1",
+    "port": 1,
+    "yes": True
+}
+
+
+for i in sample_data:
+    print(sample_data[i])

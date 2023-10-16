@@ -1,5 +1,7 @@
 
 
+
+
 class system:
     def loadlogo():
         print("""
@@ -133,7 +135,20 @@ class system:
             elif(cmd == "load_mbuild"):
                 print("[i] Loading {}".format("./sensors.json"))
                 file_contents = system.loadConfig("./sensors.json")
-                print(file_contents)
+                is_valid = True
+                for i in file_contents:
+                    if(i == "identifier" and file_contents[i] == "NETto!_NS" or is_valid == True):
+                        is_valid = True
+                        print("{}: {}".format(i, file_contents[i]))
+                    else:
+                        print("[W] Idenfier must be set to NETto!_NS !")
+                
+                # I = Index, D = Details!
+                for i in range(len(file_contents["sensors"])):
+                    print("----------------------------")
+                    for d in file_contents["sensors"][i]:
+                        print("{}: {}".format(d, file_contents["sensors"][i][d]))
+                print("----------------------------")
 
             elif(cmd == "read"):
                 if len(arg) > 1 and len(arg) < 3:
@@ -166,9 +181,20 @@ import _thread
 import time
 import os
 
+
+# Init class
+CHALLENGE_DEFAULT_MBUILD_CONFIGURATOR = {
+    "name": "default_port",
+    "type": "ranging_sensor",
+    "indict": dict,
+    "port": 1,
+    "index": 1
+}
 # Init variables
 CHALLENGE_DEFAULT_RUNTIME_FILE = './challenge_default.py'
+CHALLENGE_DEFAULT_MBUILD_FILE = "./sensors.json"
 
-system.loadme()
+
+#system.loadme()
 system.loadlogo()
 _thread.start_new_thread(system.uiinput, 0, [])

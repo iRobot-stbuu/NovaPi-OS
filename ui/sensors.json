@@ -1,0 +1,24 @@
+{
+    "identifier": "NETto!_NS",
+    "max_sensors": 5,
+    "sensors":[
+        {
+            "name": "Smart camera",
+            "type": "smart_cam",
+            "port": 3,
+            "index": 1
+        },
+        {
+            "name": "Ranging sensor",
+            "type": "ranging",
+            "port": 4,
+            "index": 1
+        },
+        {
+            "name": "Bluetooth Module",
+            "type": "bt_gamepad",
+            "port": 5,
+            "index": 1
+        }
+    ]
+}
